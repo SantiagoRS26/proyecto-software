@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poliza Request History</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        footer {
+            background-color: #28593f;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark" style="background-color: rgba(41, 90, 64, 1);">
+    <span class="navbar-brand mb-0 h1" style="color: #f1c400;">Insurance's Motors</span>
+    <img src="../static/images/logo.png" alt="Logo de la Empresa" style="max-height: 40px;">
+</nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header text-center">
+                    Application History
+                </div>
+                <div class="card-body">
+                    <h3>Person: <span th:text="${person.getId()}"></span></h3>
+                    <table class="table table-striped">
+                        <thead class="text-center">
+                        <tr>
+                            <th scope="col">CodRequest</th>
+                            <th scope="col">Process ID</th>
+                            <th scope="col">Vehicle Brand</th>
+                            <th scope="col">Vehicle Reference</th>
+                            <th scope="col">Count Reviews</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Actions</th> <!-- Columna para acciones -->
+                        </tr>
+                        </thead>
+                        <tbody th:each="poliza : ${polizaRequests}" th:data-poliza-request="${poliza}">
+                        <tr class="text-center">
+                            <td><span th:text="${poliza.codRequest}"></span></td>
+                            <td><span th:text="${poliza.processId}"></span></td>
+                            <td><span th:text="${poliza.marcaVehiculo}"></span></td>
+                            <td><span th:text="${poliza.referenciaVehiculo}"></span></td>
+                            <td><span th:text="${poliza.countReviewCR}"></span></td>
+                            <td><span th:text="${poliza.status}"></span></td>
+                            <td>
+                                <a th:href="@{/complete(taskId=${poliza.processId})}" class="btn btn-primary btn-sm">Completar</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p class="text-center">&copy; 2024 Insurance's Motors. Todos los derechos reservados.</p>
+    </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function completeTaskAndHideButton(element) {
+        var taskId = element.getAttribute('data-taskid');
+        console.log("Valor que se recibe: " + taskId);
+        const url = `/complete?taskId=${encodeURIComponent(taskId)}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Ocultar el botón
+                    element.style.display = 'none';
+                } else {
+                    alert('No se pudo completar la tarea.');
+                }
+            })
+            .catch(error => console.error('Error al completar la tarea:', error));
+    }
+
+</script>
+
+</body>
+</html>

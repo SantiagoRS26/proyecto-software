@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Información del Cliente</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    footer {
+      background-color: #28593f;
+      color: white;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark" style="background-color: rgba(41, 90, 64, 1);">
+  <span class="navbar-brand mb-0 h1" style="color: #f1c400;">Insurence's Motors</span>
+  <img src="../static/images/logo.png" alt="Logo de la Empresa" style="max-height: 40px;">
+</nav>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header text-center">
+          Información del Cliente
+        </div>
+        <div class="card-body">
+          <form id="informacionClienteForm" action="/startProcess" method="post">
+            <div class="form-group">
+              <label for="nombreCliente">Nombre del Cliente:</label>
+              <input type="text" class="form-control" id="nombreCliente" name="cliente.nombre" th:value="${cliente != null  ? cliente.nombre : 'Carlos'}">
+            </div>
+            <div class="form-group">
+              <label for="cedulaCliente">Cédula:</label>
+              <input type="text" class="form-control" id="cedulaCliente" name="cliente.id">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="edadCliente">Edad:</label>
+                <input type="number" class="form-control" id="edadCliente" name="cliente.edadCliente" th:value="${cliente != null  ? cliente.edadCliente : '23'}">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="cantSiniestros">Siniestros presentados:</label>
+                <input type="number" class="form-control" id="cantSiniestros" name="cantidadSiniestros" th:value="${poliza != null  ? poliza.cantidadSiniestros : '2'}">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="marcaVehiculo">Marca del Vehículo:</label>
+              <input type="text" class="form-control" id="marcaVehiculo" name="marcaVehiculo">
+            </div>
+            <div class="form-group">
+              <label for="referenciaVehiculo">Referencia del Vehículo:</label>
+              <input type="text" class="form-control" id="referenciaVehiculo" name="referenciaVehiculo">
+            </div>
+            <button type="submit" class="btn btn-primary" style="background-color: #28593f; border-color: transparent;">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer style="background-color: #285930; color: white; padding: 20px;">
+  <div class="container">
+    <p class="text-center">&copy; 2024 Insurence's Motors. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

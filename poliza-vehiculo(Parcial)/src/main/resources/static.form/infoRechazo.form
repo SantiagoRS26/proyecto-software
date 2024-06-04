@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "label": "Rechazado",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1c0sxg3",
+        "columns": null
+      },
+      "id": "Field_081klec",
+      "key": "cancel",
+      "defaultValue": "Poliza rechazada"
+    }
+  ],
+  "type": "default",
+  "id": "info_Rechazo",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.20.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 15
+}

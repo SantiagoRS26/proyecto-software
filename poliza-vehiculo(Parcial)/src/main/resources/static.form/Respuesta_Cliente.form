@@ -1,0 +1,38 @@
+{
+  "components": [
+    {
+      "text": "Respuesta Cliente",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_01cnh3b",
+        "columns": null
+      },
+      "id": "Field_17otzf8",
+      "properties": {}
+    },
+    {
+      "label": "Marque la casilla si el cliente aprueba las características de la poliza",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_137kai1",
+        "columns": null
+      },
+      "id": "Field_1ot1bj3",
+      "key": "Respuesta_C",
+      "defaultValue": false,
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Respuesta_Cliente",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.20.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 15
+}

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="PrecioPoliza" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.20.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
+  <decision id="calcularPoliza" name="Decisión Poliza" camunda:historyTimeToLive="0">
+    <decisionTable id="DecisionTable_1uirsgc">
+      <input id="Input_1" label="Edad" biodi:width="192" camunda:inputVariable="edadCliente">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1q2psf7" label="Siniestro" camunda:inputVariable="cantSiniestros">
+        <inputExpression id="LiteralExpression_08ald0g" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="precioPoliza" typeRef="long" />
+      <rule id="DecisionRule_1v17cmw">
+        <inputEntry id="UnaryTests_14whg0w">
+          <text>[18..25]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mhdpan">
+          <text>0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_069rul9">
+          <text>800000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0dy64bt">
+        <inputEntry id="UnaryTests_1mu1uvh">
+          <text>[18..25]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jyclwa">
+          <text>1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vlouuo">
+          <text>1000000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wujjbd">
+        <inputEntry id="UnaryTests_0zadua2">
+          <text>[18..25]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r1c40v">
+          <text>2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_040n6fl">
+          <text>1200000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_063oy46">
+        <inputEntry id="UnaryTests_1wxmqsi">
+          <text>[26..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ng7ww5">
+          <text>0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0t77xmw">
+          <text>700000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0uo9a1o">
+        <inputEntry id="UnaryTests_1he5wwo">
+          <text>[26..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0em6lb7">
+          <text>1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1hiizhq">
+          <text>900000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04xqmjp">
+        <inputEntry id="UnaryTests_1w18uy8">
+          <text>[26..30]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ve8f7e">
+          <text>2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wj7tgj">
+          <text>1100000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08xj0kt">
+        <inputEntry id="UnaryTests_1jumgmt">
+          <text>&gt;31</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l0gmsg">
+          <text>0</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07otg8u">
+          <text>1000000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03ui93l">
+        <inputEntry id="UnaryTests_1ly1uqg">
+          <text>&gt;31</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02o5p0r">
+          <text>1</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0s4zdmp">
+          <text>1200000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0l1hwp0">
+        <inputEntry id="UnaryTests_1ds9pn5">
+          <text>&gt;31</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zvypc0">
+          <text>2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1at8lax">
+          <text>1400000</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="calcularPoliza">
+        <dc:Bounds height="80" width="180" x="140" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

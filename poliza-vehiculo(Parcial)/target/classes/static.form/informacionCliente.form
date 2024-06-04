@@ -1,0 +1,88 @@
+{
+  "components": [
+    {
+      "text": "# Información del cliente",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1ra062g",
+        "columns": null
+      },
+      "id": "Field_1ehy403"
+    },
+    {
+      "label": "Nombre del cliente",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0u0cz3v",
+        "columns": null
+      },
+      "id": "Field_0ld8hpc",
+      "key": "nombreCliente",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Edad",
+      "type": "number",
+      "layout": {
+        "row": "Row_0d8q0vq",
+        "columns": 16
+      },
+      "id": "Field_0082ams",
+      "key": "edadCliente",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Marca del vehículo",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1yxnw03",
+        "columns": null
+      },
+      "id": "Field_14ywkyi",
+      "key": "marcaVehiculo",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Referencia del vehículo",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0llvc7x",
+        "columns": null
+      },
+      "id": "Field_08ql0t7",
+      "key": "referenciaVehiculo",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Siniestros presentados",
+      "type": "number",
+      "layout": {
+        "row": "Row_0hx62do",
+        "columns": null
+      },
+      "id": "Field_05f4or8",
+      "key": "cantSiniestros",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "informacionCliente",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.20.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 15
+}

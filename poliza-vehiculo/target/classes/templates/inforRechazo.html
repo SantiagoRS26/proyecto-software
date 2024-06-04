@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Información de Rechazo</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    footer {
+     background-color: #28593f;
+     color: white;
+     padding: 10px 0;
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+     text-align: center;
+   }
+ </style>
+</head>
+<body>
+  <nav class="navbar navbar-dark" style="background-color: rgba(41, 90, 64, 1);">
+    <span class="navbar-brand mb-0 h1" style="color: #f1c400;">Insurence's Motors</span>
+    <img src="../static/images/logo.png" alt="Logo de la Empresa" style="max-height: 40px;">
+  </nav>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header text-center">
+          Información de Rechazo
+        </div>
+        <div class="card-body">
+          <form id="infoRechazoForm">
+            <div class="form-group">
+              <label for="rechazoMotivo">Motivo de Rechazo:</label>
+              <input type="text" class="form-control" id="rechazoMotivo" name="rechazoMotivo" value="Poliza rechazada" readonly>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer style="background-color: #28593f; color: white; padding: 20px;">
+  <div class="container">
+    <p class="text-center">&copy; 2024 Insurence's Motors. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

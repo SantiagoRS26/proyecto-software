@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas - Insurence's Motors</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #28593f;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark" style="background-color: rgba(41, 90, 64, 1);">
+    <span class="navbar-brand mb-0 h1" style="color: #f1c400;">Insurence's Motors</span>
+    <img th:src="@{images/logo.png}" alt="Logo de la Empresa" style="max-height: 40px;">
+</nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h2 class="text-center mb-4">Lista de Tareas Pendientes</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Creado</th>
+                    <th>Acción</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="task : ${tasks}">
+                    <td th:text="${task.id}">ID de la Tarea</td>
+                    <td th:text="${task.name}">Nombre de la Tarea</td>
+                    <td th:text="${task.description}">Descripción de la Tarea</td>
+                    <td th:text="${task.created}">Fecha de Creación</td>
+                    <td>
+                        <form th:action="@{/reclamarTarea(taskId=${task.id})}" method="post">
+                            <button type="submit" class="btn btn-primary" style="background-color: #28593f;">Reclamar Tarea</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p class="text-center">&copy; 2024 Insurence's Motors. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

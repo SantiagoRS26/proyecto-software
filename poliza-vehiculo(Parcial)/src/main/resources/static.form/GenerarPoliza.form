@@ -1,0 +1,53 @@
+{
+  "components": [
+    {
+      "label": "Nombre del Cliente:",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1miyips",
+        "columns": null
+      },
+      "id": "Field_0c2r5um",
+      "key": "nombreCliente"
+    },
+    {
+      "label": "Marca del Vehiculo",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0ypce3d",
+        "columns": null
+      },
+      "id": "Field_0x2d2vp",
+      "key": "marcaVehiculo"
+    },
+    {
+      "label": "Referencia del Vehiculo",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0kiec7e",
+        "columns": null
+      },
+      "id": "Field_1pllgww",
+      "key": "referenciaVehiculo"
+    },
+    {
+      "label": "Valor de la Poliza",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_035vn6y",
+        "columns": null
+      },
+      "id": "Field_1dhy74c",
+      "key": "precioPoliza"
+    }
+  ],
+  "type": "default",
+  "id": "Generar_Poliza",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.20.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.20.0",
+  "schemaVersion": 15
+}
